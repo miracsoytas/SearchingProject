@@ -2,7 +2,6 @@
 #include <vector>
 #include <iostream>
 
-// Example binary search function for std::array
 int binarySearch(const std::array<int, 5>& arr, int target) {
     int left = 0, right = arr.size() - 1;
     while (left <= right) {
@@ -14,7 +13,6 @@ int binarySearch(const std::array<int, 5>& arr, int target) {
     return -1;
 }
 
-// Example binary search function for vector
 int binarySearch(const std::vector<int>& vec, int target) {
     int left = 0, right = vec.size() - 1;
     while (left <= right) {
@@ -26,25 +24,25 @@ int binarySearch(const std::vector<int>& vec, int target) {
     return -1;
 }
 
-// Modified binarySearchFirst function for std::array
+
 template<size_t N>
 int binarySearchFirst(const std::array<int, N>& arr, int target) {
-    int index = binarySearch(arr, target);  // Initial search for an occurrence of the target
-    if (index == -1) return -1;             // Target not found at all
+    int index = binarySearch(arr, target);  
+    if (index == -1) return -1;            
 
-    // Check for the first occurrence
+   
     while (index > 0 && arr[index - 1] == target) {
         --index;
     }
     return index;
 }
 
-// Modified binarySearchFirst function for vector
-int binarySearchFirst(const std::vector<int>& vec, int target) {
-    int index = binarySearch(vec, target);  // Initial search for an occurrence of the target
-    if (index == -1) return -1;             // Target not found at all
 
-    // Check for the first occurrence
+int binarySearchFirst(const std::vector<int>& vec, int target) {
+    int index = binarySearch(vec, target);  
+    if (index == -1) return -1;           
+
+   
     while (index > 0 && vec[index - 1] == target) {
         --index;
     }
